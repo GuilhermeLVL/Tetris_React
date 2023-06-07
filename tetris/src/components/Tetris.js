@@ -10,7 +10,7 @@ const Tetris = () => {
 
     return(
         <div>
-            <Stage Stage={createStage()}></Stage>
+            <Stage stage={createStage()}></Stage>
             <aside>
                 <div>
                 <Display text="Score"></Display>

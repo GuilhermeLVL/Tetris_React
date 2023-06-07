@@ -80,4 +80,6 @@ export const randomTetromino = () => {
     
     const randTetrominios = 
     tetrominios[Math.floor(Math.random() * tetrominios.length)]
+
+    return TETROMINOS [randTetrominios]
 }

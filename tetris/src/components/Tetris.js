@@ -10,7 +10,12 @@ const Tetris = () => {
         <div>
             <Stage></Stage>
             <aside>
-                <Display text="score"></Display>
+                <div>
+                <Display text="Score"></Display>
+                <Display text="Rows"></Display>
+                <Display text="Level"></Display>
+                </div>
+                <StartButton></StartButton>
             </aside>
         </div>
     )

@@ -9,7 +9,7 @@ import StartButton from "./StartButton";
 const Tetris = () => {
 
     return(
-        <div>
+        <StyledTetrisWrapper>
             <Stage stage={createStage()}></Stage>
             <aside>
                 <div>
@@ -19,7 +19,7 @@ const Tetris = () => {
                 </div>
                 <StartButton></StartButton>
             </aside>
-        </div>
+        </StyledTetrisWrapper>
     )
 }
 

@@ -28,7 +28,17 @@ const movePlayer = dir =>{
     
 
 }
-const startGame = 
+const startGame = () =>{
+
+
+}
+
+const drop = () =>{
+
+}
+const dropPlayer = () =>{
+    
+}
 
     return(
         <StyledTetrisWrapper>

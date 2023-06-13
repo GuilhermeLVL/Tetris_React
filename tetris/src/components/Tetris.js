@@ -40,6 +40,10 @@ const dropPlayer = () =>{
     
 }
 
+const move= ({keyCode}) =>{
+    
+}
+
     return(
         <StyledTetrisWrapper>
             <StyledTetris>

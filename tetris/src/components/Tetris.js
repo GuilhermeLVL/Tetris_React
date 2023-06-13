@@ -25,12 +25,13 @@ const [ stage, setStage] = useStage(player)
     console.log('re-render');
 
 const movePlayer = dir =>{
-    
+    updatePlayerPos({x:dir, y:0});
 
 }
 const startGame = () =>{
 
-
+setStage(createStage());
+resetPlayer();
 }
 
 const drop = () =>{
@@ -67,7 +68,7 @@ const move= ({keyCode}) =>{
                 <Display text="Level"></Display>
                 </div>
                 )}
-                <StartButton></StartButton>
+                <StartButton onClick={startGame}></StartButton>
             </aside>
             </StyledTetris>
         </StyledTetrisWrapper>

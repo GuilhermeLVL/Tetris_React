@@ -11,6 +11,8 @@ const [player, setPlayer ] = useState({
     collided:false,
 })
 
+
+
 const updatePlayerPos = ({ x,y, collided}) => {
   setPlayer(prev => ({
     ...prev,
@@ -20,12 +22,12 @@ const updatePlayerPos = ({ x,y, collided}) => {
 
 }
 const resetPlayer = useCallback(() => {
-setPlayer({
-    pos:{x: STAGE_WIDTH/ 2-2, y: 0},
-    tetrominio:randomTetromino().shape,
-    collided:false,
-})
-},[])
+  setPlayer({
+    pos: { x: STAGE_WIDTH / 2 - 2, y: 0 },
+    tetromino: randomTetromino().shape,
+    collided: false,
+  });
+}, []);
 
 return [player, updatePlayerPos, resetPlayer];
     

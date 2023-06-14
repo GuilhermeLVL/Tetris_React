@@ -10,23 +10,21 @@ export const usePlayer = () => {
     collided: false,
   });
 
-  const rotate = (matrix, dir) => {
+  function rotate(matrix, dir) {
     // Make the rows to become cols (transpose)
-    const rotatedTetro = matrix.map((_, index) =>
-      matrix.map(col => col[index]),
-    );
-    // Reverse each row to get a rotated matrix
-    if (dir > 0) return rotatedTetro.map(row => row.reverse());
-    return rotatedTetro.reverse();
-  };
+    const mtrx = matrix.map((_, index) => matrix.map(column => column[index]));
+    // Reverse each row to get a rotaded matrix
+    if (dir > 0) return mtrx.map(row => row.reverse());
+    return mtrx.reverse();
+  }
 
-  const playerRotate = (stage, dir) => {
+  function playerRotate(stage, dir) {
     const clonedPlayer = JSON.parse(JSON.stringify(player));
     clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
 
     const pos = clonedPlayer.pos.x;
     let offset = 1;
-    while(checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
+    while (checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
       clonedPlayer.pos.x += offset;
       offset = -(offset + (offset > 0 ? 1 : -1));
       if (offset > clonedPlayer.tetromino[0].length) {
@@ -36,7 +34,7 @@ export const usePlayer = () => {
       }
     }
     setPlayer(clonedPlayer);
-  };
+  }
 
   const updatePlayerPos = ({ x, y, collided }) => {
     setPlayer(prev => ({

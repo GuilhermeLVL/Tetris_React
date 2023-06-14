@@ -10,10 +10,20 @@ export const useStage = (player, resetPlayer) => {
 
             const newStage = prevStage.map(row =>
                 row.map(cell =>(cell[1] ==='clear' ? [0,'clear'] : cell)),
-                )
+                );
 
-                
-        }
+                player.tetrominio.forEach((row, y) =>{
+                  row.forEach((value, x) => {
+
+                    if(value!== 0){
+                        newStage[y + player.pos.y][x + player.pos.x] = [
+                            value,
+                            `${player.collided ? 'merged' : 'clear'}`,
+                        ]
+                    }
+                  } )  
+                })
+        };
 
         setStage(prev => updateStage(prev))
 

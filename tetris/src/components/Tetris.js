@@ -25,7 +25,7 @@ const [ stage, setStage] = useStage(player)
     console.log('re-render');
 
 const movePlayer = dir =>{
-    
+
     if(!checkCollision(player, stage, {x: dir, y:0})){
 updatePlayerPos({x:dir, y:0});
 
@@ -40,7 +40,14 @@ resetPlayer();
 }
 
 const drop = () =>{
-updatePlayerPos({x:0, y:1, collided:false })
+
+    if(!checkCollision(player, stage, {x:0, y:1})){
+        updatePlayerPos({x:0, y:1, collided:false })
+
+    }else{
+        updatePlayerPos({x:0, y:0, collided:true })
+    }
+
 }
 
 const dropPlayer = () =>{
